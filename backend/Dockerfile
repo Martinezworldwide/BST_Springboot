@@ -1,13 +1,12 @@
 # Build stage: compile Spring Boot app with Maven
-# Build context: repo root; Dockerfile in backend/ so paths are backend/...
+# Build context must be backend dir (repo root for BST_Springboot_Backend, or Root Directory=backend for full repo)
 FROM maven:3.9-eclipse-temurin-17-alpine AS build
 WORKDIR /app
 
-# Copy backend pom and source (when built from repo root: backend/...)
-COPY backend/pom.xml .
+COPY pom.xml .
 RUN mvn dependency:go-offline -B
 
-COPY backend/src ./src
+COPY src ./src
 RUN mvn package -DskipTests -B
 
 # Run stage

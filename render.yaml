@@ -1,11 +1,11 @@
 # Render blueprint: deploy Spring Boot backend as a Web Service.
-# Build context is repo root; Dockerfile copies from backend/
+# Build context = backend/ so Dockerfile COPY pom.xml and COPY src work
 services:
   - type: web
     name: securebank-bst-api
     runtime: docker
     dockerfilePath: ./backend/Dockerfile
-    dockerContext: .
+    dockerContext: ./backend
     envVars:
       - key: JAVA_VERSION
         value: "17"
