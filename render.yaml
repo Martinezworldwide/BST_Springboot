@@ -1,0 +1,14 @@
+# Render blueprint: deploy Spring Boot backend as a Web Service.
+# Build context is repo root; Dockerfile copies from backend/
+services:
+  - type: web
+    name: securebank-bst-api
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: .
+    envVars:
+      - key: JAVA_VERSION
+        value: "17"
+      # Set CORS_ORIGINS to your GitHub Pages URL, e.g. https://youruser.github.io
+      - key: CORS_ORIGINS
+        sync: false

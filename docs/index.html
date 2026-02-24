@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SecureBank – BST Fraud Detection</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>SecureBank BST Fraud Detection</h1>
+    <p>Manage flagged transactions with Binary Search Tree (insert, search, delete).</p>
+    <div class="api-status">
+      <span id="api-base"></span>
+      <span id="api-status-text">Checking…</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>1. Insert flagged transaction (BST)</h2>
+      <form id="form-insert">
+        <label>Transaction ID <input type="text" id="insert-id" required placeholder="e.g. TX-001"></label>
+        <label>Amount <input type="number" id="insert-amount" step="0.01" required placeholder="0.00"></label>
+        <label>Reason <input type="text" id="insert-reason" placeholder="Suspicious pattern"></label>
+        <button type="submit">Insert</button>
+      </form>
+      <div id="insert-result" class="result"></div>
+    </section>
+
+    <section class="card">
+      <h2>2. Search by Transaction ID (BST vs list)</h2>
+      <form id="form-search">
+        <label>Transaction ID <input type="text" id="search-id" required placeholder="e.g. TX-001"></label>
+        <button type="submit">Search</button>
+      </form>
+      <div id="search-result" class="result"></div>
+    </section>
+
+    <section class="card">
+      <h2>3. Delete reviewed transaction</h2>
+      <form id="form-delete">
+        <label>Transaction ID <input type="text" id="delete-id" required placeholder="e.g. TX-001"></label>
+        <button type="submit">Delete</button>
+      </form>
+      <div id="delete-result" class="result"></div>
+    </section>
+
+    <section class="card">
+      <h2>Flagged transactions (in-order)</h2>
+      <p><button type="button" id="btn-refresh">Refresh list</button> <span id="tree-size"></span></p>
+      <div id="list-result" class="result list"></div>
+    </section>
+
+    <section class="card">
+      <h2>BST implementation notes</h2>
+      <div id="docs-result" class="result docs"></div>
+    </section>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

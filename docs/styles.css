@@ -1,0 +1,149 @@
+:root {
+  --bg: #0f1419;
+  --surface: #1a2332;
+  --border: #2d3a4d;
+  --text: #e6edf3;
+  --muted: #8b949e;
+  --accent: #58a6ff;
+  --success: #3fb950;
+  --danger: #f85149;
+  --radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 1rem;
+  line-height: 1.5;
+}
+
+header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+header h1 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.5rem;
+}
+
+header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.api-status {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+#api-status-text.ok { color: var(--success); }
+#api-status-text.fail { color: var(--danger); }
+
+main {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.card h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+label input {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  margin-top: 0.25rem;
+  padding: 0.5rem 0.6rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+button:hover {
+  filter: brightness(1.1);
+}
+
+button[type="submit"] {
+  margin-top: 0.25rem;
+}
+
+.result {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: var(--bg);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.result.empty {
+  color: var(--muted);
+}
+
+.result.list ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.result.list li {
+  margin-bottom: 0.35rem;
+}
+
+.result.docs {
+  white-space: normal;
+}
+
+.result.docs h3 {
+  margin: 1rem 0 0.35rem 0;
+  font-size: 0.95rem;
+}
+
+.result.docs h3:first-child { margin-top: 0; }
+
+.result.docs p {
+  margin: 0 0 0.5rem 0;
+}
+
+#tree-size {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
